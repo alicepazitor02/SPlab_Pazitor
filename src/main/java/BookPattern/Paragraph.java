@@ -1,16 +1,10 @@
 package BookPattern;
-
-
-
-import lombok.NoArgsConstructor;
-
-
-@NoArgsConstructor
-
+import lombok.Setter;
 public class Paragraph extends Element{
 
     protected  String text;
-
+    @Setter
+    private AlignStrategy alignStrategy;
     public Paragraph (String text){
         this.text = text;
     }
@@ -21,7 +15,9 @@ public class Paragraph extends Element{
 
     @Override
     public void print() {
-        System.out.println("Paragraph: " + this.text);
+        if(alignStrategy != null)
+            alignStrategy.render(text);
+        else new AlignLeft().render(text);
     }
 
     @Override
