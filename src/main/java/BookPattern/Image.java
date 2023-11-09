@@ -1,15 +1,32 @@
 package BookPattern;
 
-import lombok.AllArgsConstructor;
+import java.util.concurrent.TimeUnit;
+
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
-public class Image implements Element{
-    private String imageName;
+
+public class Image extends Element{
+   
+    protected String imageName;
+
+    public Image(String imageName) {
+        this.imageName = imageName;
+    }
+
+    public Image(Image other){
+        this.imageName = other.imageName;
+    }
+    @Override
     public void print(){
-        System.out.println("Image with name:" + this.imageName);
+        System.out.println("Image with name: " + this.imageName);
+
+    }
+
+    @Override 
+    
+    public Element clone(){
+        return new Image(this);
     }
 }
