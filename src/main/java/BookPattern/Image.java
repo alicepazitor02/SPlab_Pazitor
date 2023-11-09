@@ -3,30 +3,38 @@ package BookPattern;
 import java.util.concurrent.TimeUnit;
 
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-
-public class Image extends Element{
+public class Image extends Element  implements Picture{
    
-    protected String imageName;
-
-    public Image(String imageName) {
-        this.imageName = imageName;
+    protected String url;
+    protected String imageContent;
+    
+    public Image(String url) {
+        this.url = url;
+        try{
+            TimeUnit.SECONDS.sleep(5);
+         } catch(InterruptedException e){
+            e.getStackTrace();
+         }
+    
     }
 
     public Image(Image other){
-        this.imageName = other.imageName;
+        this.url = other.url;
     }
     @Override
     public void print(){
-        System.out.println("Image with name: " + this.imageName);
+        System.out.println("Image with name: " + this.url);
+   }
+   
 
-    }
 
     @Override 
     
     public Element clone(){
         return new Image(this);
+    }
+    public String getUrl(){
+        return url;
     }
 }

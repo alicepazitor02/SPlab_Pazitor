@@ -1,12 +1,12 @@
 package BookPattern;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+
+
 import lombok.NoArgsConstructor;
 
 
 @NoArgsConstructor
-@Data
+
 public class Paragraph extends Element{
 
     protected  String text;

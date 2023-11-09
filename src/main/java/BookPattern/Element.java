@@ -11,7 +11,7 @@ public abstract class Element {
           this.elementList = new ArrayList<>();
      }
      public void add(Element element){
-          elementList.add(element.clone());
+          elementList.add(element);
      }
      public void remove(Element element){
           elementList.remove(element);
@@ -21,6 +21,6 @@ public abstract class Element {
           return elementList.get(index);
      }
      public abstract void print();
-     public abstract Element clone();
+    // public abstract Element clone();
 
 }
