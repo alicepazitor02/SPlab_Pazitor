@@ -2,13 +2,13 @@ package BookPattern;
 
 public class ImageLoaderFactory {
     
-    private Image used;
-    private String url;
+    //private Image used;
+   // private String url;
     private ImageLoader imageLoader;
 
     public ImageLoaderFactory()
     {
-            this.url = url;
+           // this.url = url;
     }
     public void create (String url) {
         String format  = null;
