@@ -29,6 +29,10 @@
             <version>2.7.18</version> <!-- Replace with the latest Spring Boot version -->
         </dependency>
         <!-- Spring Boot Starter -->
-       
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20210307</version> <!-- Replace with the latest version available -->
+        </dependency>
     </dependencies>
 </project>
